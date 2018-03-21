@@ -1,5 +1,6 @@
 library(shiny)
 library(data.table)
+library(DT)
 
 pdata <- data.table(readRDS("player_data.rds"))
 
@@ -18,7 +19,7 @@ ui <- fluidPage(
   fluidRow(
     column(2,
            selectInput("players",
-                       label = h5("Select Player"),
+                       label = h5("Select Players"),
                        multiple = TRUE,
                        choices = player_names,
                        selected = players.pre.select
